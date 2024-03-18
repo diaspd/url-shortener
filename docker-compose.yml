@@ -1,0 +1,22 @@
+version: '3.0'
+
+services:
+  postgres:
+    image: bitnami/postgresql:latest
+    ports: 
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=shortlinks
+
+  redis:
+    image: bitnami/redis:latest
+    ports: 
+     - "6379:6379" 
+    environment:
+      - REDIS_PASSWORD=docker
+
+volumes:
+  postgress_data:
+  redis_data:
