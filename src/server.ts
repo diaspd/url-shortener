@@ -2,10 +2,11 @@ import fastify from "fastify";
 import { z } from 'zod'
 import { sql } from "./lib/postgres";
 import postgres from "postgres";
+import { redis } from "./lib/redis";
 
 const app = fastify()
 
-app.get('/:code', async (request) => {
+app.get('/:code', async (request, reply) => {
   const getLinkSchema = z.object({
     code: z.string().min(3),
   })
@@ -18,7 +19,15 @@ app.get('/:code', async (request) => {
     WHERE short_links.code = ${code}
   `
 
-  return result
+  if (result.length === 0) {
+    return reply.status(400).send({ message: 'Link not found'})
+  }
+
+  const link = result[0]
+
+  await redis.zIncrBy('metrics', 1, String(link.id))
+
+  return reply.redirect(301, link.original_url)
 })
 
 app.get('/api/links', async () => {
@@ -60,6 +69,21 @@ app.post('/api/links', async (request, reply) => {
 
     return reply.status(500).send({ message: 'Internal error.' })
   }
+})
+
+app.get('/api/metrics', async () => {
+  const result = await redis.zRangeByScoreWithScores('metrics', 0, 50)
+
+  const metrics = result
+    .sort((a, b) => b.score - a.score)
+    .map(item => {
+      return {
+        shortLinkId: Number(item.value),
+        clicks: item.score,
+      }
+    })
+
+  return metrics
 })
 
 app.listen({ 
