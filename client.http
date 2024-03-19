@@ -1,1 +1,7 @@
-GET http://localhost:3333/test
+POST http://localhost:3333/links
+Content-Type: application/json
+
+{
+  "code": "pedro",
+  "url": "https://pedro-dias.vercel.app/"
+}
