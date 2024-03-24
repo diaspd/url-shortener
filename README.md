@@ -27,7 +27,7 @@ $ npm install
 ## Running the app
 
 ```bash
-# npm run dev
+$ npm run dev
 ```
 
 <h2>Methods: </h2>
