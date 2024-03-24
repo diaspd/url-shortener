@@ -30,6 +30,15 @@ $ npm install
 $ npm run dev
 ```
 
+## Setting the app
+To run the data base run the command: 
+
+```bash
+$ docker compose up -d
+```
+
+The app will be available on `http://localhost:3000`
+
 <h2>Methods: </h2>
 
 ```
