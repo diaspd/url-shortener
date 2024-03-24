@@ -5,6 +5,7 @@
 <p align="center">
   <a href="#-Technologies"><b>Technologies</b></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-Project"><b>Project</b></a>&nbsp;&nbsp;&nbsp;
+  <a href="#-Setting the app"><b>Setup</b></a>&nbsp;&nbsp;&nbsp;
 </p>
 
 ---
@@ -24,17 +25,17 @@ $ cd
 $ npm install
 ```
 
-## Running the app
-
-```bash
-$ npm run dev
-```
-
 ## Setting the app
 To run the data base run the command: 
 
 ```bash
 $ docker compose up -d
+```
+
+## Running the app
+
+```bash
+$ npm run dev
 ```
 
 The app will be available on `http://localhost:3000`
