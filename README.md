@@ -25,7 +25,7 @@ $ cd
 $ npm install
 ```
 
-## Setting the app
+## 📄 Setting the app
 To run the data base run the command: 
 
 ```bash
