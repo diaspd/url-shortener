@@ -5,7 +5,7 @@
 <p align="center">
   <a href="#-Technologies"><b>Technologies</b></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-Project"><b>Project</b></a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-Setup"><b>Setup</b></a>&nbsp;&nbsp;&nbsp;
+  <a href="#-Setting-the-app"><b>Setup</b></a>&nbsp;&nbsp;&nbsp;
 </p>
 
 ---
@@ -25,7 +25,7 @@ $ cd
 $ npm install
 ```
 
-## Setup
+## Setting the app
 To run the data base run the command: 
 
 ```bash
