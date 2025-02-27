@@ -8,7 +8,7 @@
     "setup": "tsx ./src/setup.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "pedro_dias",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.11.29",
